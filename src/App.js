@@ -1,14 +1,27 @@
 import './App.css';
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+} from 'react-router-dom'
+
+import Login from "./views/Login";
+import Translation from "./views/Translation";
+import Profile from "./views/Profile";
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Welcome to Erik and Arif Translations Project!</h1>
+    return (
+        <BrowserRouter>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<Login/>}/>
+                    <Route path="/translation" element={<Translation/>}/>
+                    <Route path="/profile" element={<Profile/>}/>
+                </Routes>
 
-        <h3>test</h3>
-
-    </div>
-  );
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
