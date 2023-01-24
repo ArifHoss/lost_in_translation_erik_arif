@@ -1,20 +1,29 @@
 import {useForm} from 'react-hook-form'
+import {loginUser} from "../../api/user";
+import {useState, useEffect} from "react";
 
 const usernameConfig = {
     required: true,
     minLength: 3
 }
 const LoginForm = () => {
+
     const {
         register,
         handleSubmit,
         formState: {errors}
     } = useForm()
 
-    const onSubmit = (data) => {
-        console.log(data)
+    const [loading, setLoading] = useState(false)
+
+    const onSubmit = async ({username}) => {
+        setLoading(true)
+        const [error, user] = await loginUser(username)
+
+        console.log('error: ', error)
+        console.log('user: ', user)
+        setLoading(false)
     }
-    console.log(errors)
 
     const errorMessage = ( () => {
         if (!errors.username) {
@@ -42,7 +51,10 @@ const LoginForm = () => {
                         {...register('username', usernameConfig)}/>
                     {errorMessage}
                 </fieldset>
-                <button type="submit">Continue</button>
+                <button type="submit" disabled={loading}>Continue</button>
+
+                {loading && <p>Logging in...</p>}
+
             </form>
         </>
     )
