@@ -1,7 +1,8 @@
 import {createHeaders} from "./index"
+
 const apiUrl = process.env.REACT_APP_API_URL
 
- const checkForUser = async (username) => {
+const checkForUser = async (username) => {
     try {
         const response = await fetch(`${apiUrl}?username=${username}`)
         if (!response.ok) {
@@ -17,7 +18,7 @@ const apiUrl = process.env.REACT_APP_API_URL
 }
 
 
- const createUser = async (username) => {
+const createUser = async (username) => {
     try {
         const response = await fetch(apiUrl, {
             method: 'POST',
@@ -51,7 +52,6 @@ export const loginUser = async (username) => {
 
 
     return await createUser(username)
-
 
 
 }
