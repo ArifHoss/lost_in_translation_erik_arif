@@ -20,7 +20,6 @@ function App() {
                     <Route path="/translation" element={<Translation/>}/>
                     <Route path="/profile" element={<Profile/>}/>
                 </Routes>
-
             </div>
         </BrowserRouter>
     );

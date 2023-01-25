@@ -5,8 +5,6 @@ const Navbar = () => {
 
     const {user} = useUser()
 
-
-
     return (
         <nav>
             <ul>
