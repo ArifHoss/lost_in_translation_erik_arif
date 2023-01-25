@@ -9,6 +9,7 @@ const apiUrl = process.env.REACT_APP_API_URL
         }
 
         const data = await response.json()
+
         return [null, data]
     } catch (error) {
         return [error.message, []]
