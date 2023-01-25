@@ -1,21 +1,11 @@
 import withAuth from "../hoc/withAuth"
+import TranslationForm from "../components/Translation/TranslationForm"
 const Translation = () => {
     return (
     <>
         <h1>Translation</h1>
+        <TranslationForm/>
 
-        <form>
-            <fieldset>
-                <label htmlFor="username">Input: </label>
-                <input
-                    type="text"
-                    placeholder="translate this!"
-                  />
-            </fieldset>
-            <button type="submit">
-                Continue
-            </button>
-        </form>
     </>
     )
 }
