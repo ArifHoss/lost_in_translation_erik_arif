@@ -13,13 +13,13 @@ h1{
 }
 
 
-/*.loginform_container{*/
-/*    background-color: #EFEFEF;*/
-/*    padding: 3rem;*/
-/*    margin: 2rem auto;*/
-/*    width: 40rem;*/
-/*    border-radius: 12px;*/
-/*    border-bottom-style:solid;*/
-/*    border-bottom-color: #845EC2;*/
-/*    border-bottom-width: 40px;*/
-/*}*/
+.loginform_container{
+    background-color: #EFEFEF;
+    padding: 3rem;
+    margin: 2rem auto;
+    width: 40rem;
+    border-radius: 12px;
+    border-bottom-style:solid;
+    border-bottom-color: #845EC2;
+    border-bottom-width: 40px;
+}
