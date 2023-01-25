@@ -24,10 +24,10 @@ const LoginForm = () => {
 
     // Side Effects
     useEffect(() => {
-        if(user !== null){
+        if (user !== null) {
             navigate('profile')
         }
-    }, [user,navigate]) //Empty deps - Only run 1ce
+    }, [user, navigate]) //Empty deps - Only run 1ce
 
     //Event Handles
     const onSubmit = async ({username}) => {
@@ -61,14 +61,17 @@ const LoginForm = () => {
     })()
 
     return (
-        <>
-            <h2>What's your name?</h2>
+        <div className='loginform_container'>
+            {/*<div >*/}
+            {/*    <h1>Lost in Translation</h1>*/}
+            {/*    <h4>Get started</h4>*/}
+            {/*</div>*/}
             <form onSubmit={handleSubmit(onSubmit)}>
                 <fieldset>
                     <label htmlFor="username">Username: </label>
                     <input
                         type="text"
-                        placeholder="johnDoe"
+                        placeholder="What's your name?"
                         {...register('username', usernameConfig)}/>
                     {errorMessage}
                 </fieldset>
@@ -80,7 +83,7 @@ const LoginForm = () => {
                 {apiError && <p> {apiError}</p>}
 
             </form>
-        </>
+        </div>
     )
 }
 export default LoginForm
