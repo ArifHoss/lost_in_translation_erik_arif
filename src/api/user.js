@@ -23,7 +23,7 @@ const apiUrl = process.env.REACT_APP_API_URL
             headers: createHeaders(),
             body: JSON.stringify({
                 username,
-                orders: []
+                translations: []
             })
         })
         if (!response.ok) {
