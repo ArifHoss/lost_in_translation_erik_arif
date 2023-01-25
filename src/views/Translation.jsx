@@ -4,7 +4,6 @@ const Translation = () => {
     <>
         <h1>Translation</h1>
 
-
         <form>
             <fieldset>
                 <label htmlFor="username">Input: </label>
