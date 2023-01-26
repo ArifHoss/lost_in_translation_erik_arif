@@ -2,7 +2,7 @@ import ProfileTranslationHistoryItem from "./ProfileTranslationHistoryItem"
 const ProfileTranslationHistory = ({translations}) => {
 
 
-    const translationList = translations.map(
+    const translationList = translations.slice(-10).reverse().map(
         (translation, index) => <ProfileTranslationHistoryItem key={translation + '-' + index} translation={translation}/>)
     return (
 
