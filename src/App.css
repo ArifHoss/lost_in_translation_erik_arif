@@ -71,3 +71,20 @@ h1{
     border-bottom-color: #845EC2;
     border-bottom-width: 40px;
 }
+
+.translations_box{
+    width: 20rem;
+    height: 20rem;
+    border: 1px solid #ececec;
+    background-color: antiquewhite;
+    color: white;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 8px rgba(0,0,0,0.25);
+
+}
+
+.translations_form_box_container{
+    position: center;
+}

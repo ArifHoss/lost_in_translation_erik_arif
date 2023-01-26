@@ -7,15 +7,15 @@ import {useState} from "react";
 
 const TranslationForm = () => {
 
-    const { register, handleSubmit, formState: {errors} } = useForm();
-    const {user,setUser} = useUser()
+    const {register, handleSubmit, formState: {errors}} = useForm();
+    const {user, setUser} = useUser()
 
-    const [translationSignImages,setTranslationSignImages] = useState([])
+    const [translationSignImages, setTranslationSignImages] = useState([])
 
     const onSubmit = async ({translate}) => {
 
 
-        const [error, updatedUser] = await translateAdd(user,translate)
+        const [error, updatedUser] = await translateAdd(user, translate)
 
 
         if (error !== null) {
@@ -42,7 +42,7 @@ const TranslationForm = () => {
         //     return <img src={`/img/signs/${char}.png`} alt={char}/>
 
         const images = chars.filter(char => /^[a-zA-Z]$/.test(char)).map(char => {
-            return  <img src= {`/img/signs/${char}.png`} alt={char} width="50"/>
+            return <img src={`/img/signs/${char}.png`} alt={char} width="50"/>
         })
 
         // console.log(images)
@@ -52,22 +52,24 @@ const TranslationForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <fieldset>
-                <label htmlFor="translate">Translate: </label>
-                <input
-                    type="text"
-                    placeholder="translate this!"
-                    {...register("translate", {required: true})} />
+        <div className='translations_form_box_container'>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <fieldset>
+                    <label htmlFor="translate">Translate: </label>
+                    <input
+                        type="text"
+                        placeholder="translate this!"
+                        {...register("translate", {required: true})} />
 
-            </fieldset>
-            <button type="submit">
-                Translate
-            </button>
+                </fieldset>
+                <button type="submit">
+                    Translate
+                </button>
+            </form>
             <div className='translations_box'>
                 {translationSignImages}
             </div>
-        </form>
+        </div>
     )
 }
 

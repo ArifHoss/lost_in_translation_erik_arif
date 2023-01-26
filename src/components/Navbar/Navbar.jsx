@@ -11,7 +11,7 @@ const Navbar = () => {
             {/*    <li>Lost in translation</li>*/}
             {/*</ul>*/}
             <div className='nav_title'>
-                <img src="../../../public/img/logo/Logo.png" alt="logo"/>
+                <img src="/img/logo/Logo.png" alt="logo" width={65}/>
                 <h3>Lost in Translation</h3>
             </div>
 
