@@ -3,11 +3,14 @@ import {useUser} from "../../context/UserContext"
 import {translateAdd} from "../../api/translate"
 import {storageSave} from "../../utils/storage"
 import {STORAGE_KEY_USER} from "../../const/storageKeys"
+import {useState} from "react";
 
 const TranslationForm = () => {
 
     const { register, handleSubmit, formState: {errors} } = useForm();
     const {user,setUser} = useUser()
+
+    const [translationSignImages,setTranslationSignImages] = useState([])
 
     const onSubmit = async ({translate}) => {
 
@@ -27,6 +30,22 @@ const TranslationForm = () => {
         console.log('error', error)
         console.log('updatedUser', updatedUser)
 
+        /*
+        takes a string called "translate" and splits it into an array of individual characters.
+        It then maps over that array and returns an image element for each character, using the
+        character as the file name for the image source. The image element also includes an "alt"
+        attribute with the character as its value.
+         */
+
+        const chars = translate.split('')
+        const images = chars.map((char) => {
+            return <img src={`/img/signs/${char}.png`} alt={char}/>
+
+        })
+
+        // console.log(images)
+
+        setTranslationSignImages(images)
 
     }
 
@@ -43,6 +62,7 @@ const TranslationForm = () => {
             <button type="submit">
                 Translate
             </button>
+           
         </form>
     )
 }
