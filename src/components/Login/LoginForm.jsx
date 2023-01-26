@@ -5,6 +5,9 @@ import {storageSave} from "../../utils/storage"
 import {useNavigate} from 'react-router-dom'
 import {useUser} from "../../context/UserContext"
 import {STORAGE_KEY_USER} from "../../const/storageKeys"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
+
 
 const usernameConfig = {
     required: true,
@@ -67,17 +70,19 @@ const LoginForm = () => {
             {/*    <h4>Get started</h4>*/}
             {/*</div>*/}
             <form onSubmit={handleSubmit(onSubmit)}>
-                <fieldset>
-                    <label htmlFor="username">Username: </label>
-                    <input
-                        type="text"
-                        placeholder="What's your name?"
-                        {...register('username', usernameConfig)}/>
-                    {errorMessage}
+                <fieldset className='form_fieldset'>
+
+                        <label htmlFor="username">Username: </label>
+                        <input
+                            type="text"
+                            placeholder="What's your name?"
+                            {...register('username', usernameConfig)}/>
+                        {errorMessage}
+                        <button type="submit" disabled={loading}>
+                            <FontAwesomeIcon icon={faArrowRight}/>
+                        </button>
+
                 </fieldset>
-                <button type="submit" disabled={loading}>
-                    Continue
-                </button>
 
                 {loading && <p>Logging in...</p>}
                 {apiError && <p> {apiError}</p>}

@@ -9,9 +9,13 @@ const Navbar = () => {
 
     return (
         <nav>
-            <ul>
-                <li>Lost in translation</li>
-            </ul>
+            {/*<ul>*/}
+            {/*    <li>Lost in translation</li>*/}
+            {/*</ul>*/}
+            <div className='nav_title'>
+                <img src="../../../public/img/logo/Logo.png" alt="logo"/>
+                <h3>Lost in Translation</h3>
+            </div>
 
             {
                 user !== null &&
