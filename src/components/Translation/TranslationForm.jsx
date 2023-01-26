@@ -62,7 +62,9 @@ const TranslationForm = () => {
             <button type="submit">
                 Translate
             </button>
-           
+            <div className='translations_box'>
+                {translationSignImages}
+            </div>
         </form>
     )
 }
