@@ -38,9 +38,11 @@ const TranslationForm = () => {
          */
 
         const chars = translate.split('')
-        const images = chars.map((char) => {
-            return <img src={`/img/signs/${char}.png`} alt={char}/>
+        // const images = chars.map((char) => {
+        //     return <img src={`/img/signs/${char}.png`} alt={char}/>
 
+        const images = chars.filter(char => /^[a-zA-Z]$/.test(char)).map(char => {
+            return  <img src= {`/img/signs/${char}.png`} alt={char} width="50"/>
         })
 
         // console.log(images)
