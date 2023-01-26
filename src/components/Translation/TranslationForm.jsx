@@ -31,7 +31,7 @@ const TranslationForm = () => {
         console.log('updatedUser', updatedUser)
 
         /*
-        takes a string called "translate" and splits it into an array of individual characters.
+        takes user input "translate" and splits it into an array of individual characters.
         It then maps over that array and returns an image element for each character, using the
         character as the file name for the image source. The image element also includes an "alt"
         attribute with the character as its value.
