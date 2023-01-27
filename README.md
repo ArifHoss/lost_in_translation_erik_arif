@@ -1,3 +1,44 @@
+
+# Sign Language Translator
+This is an online sign language translator built as a Single Page Application using the React framework. It allows users to translate English words and short sentences to American Sign Language. 
+
+## Project Requirements
+
+#### •	Figma
+#### •	NPM/Node.js (LTS - Long Term Support version)
+#### •	React CRA (create-react-app)
+#### •	Visual Studio Code Text Editor/ IntelliJ
+#### •	Browser Developer Tools for testing and debugging (React and Redux Dev Tools)
+#### •	Git
+#### •	Rest API: https://github.com/dewald-els/noroff-assignment-api
+
+## Features
+#### •	Login page for users to enter their name
+#### •	Translation page for users to input text and see the corresponding sign language translation
+#### •	Profile page to view the last 10 translations for the current user, and clear them
+#### •	Logout button to clear all storage and return to the start page
+How to run
+#### •	Clone the repository
+#### •	Run npm install to install all dependencies
+#### •	Run npm start to start the development server
+#### •	Open http://localhost:3000 in your browser to view the application
+
+## Deployment
+The application is deployed on Vercel platform. This is project url.
+ https://lost-in-translation-erik-arif-dcvn.vercel.app/
+Note
+#### •	The images for the sign language are provided.
+#### •	You may choose to limit the input to 40 letters.
+#### •	You may ignore special characters and spaces
+#### •	To simplify things, you may simply delete the records, but you should NEVER delete data from a database.
+#### •	The component tree is exported to PDF, uploaded the file to the project’s Git repository and submitted a link to your file.
+
+## Authors:
+#### •	Arif Hossain
+#### •	Erik Brandt
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
