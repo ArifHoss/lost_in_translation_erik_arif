@@ -2,6 +2,8 @@ import {createHeaders} from "./index"
 
 const apiUrl = process.env.REACT_APP_API_URL
 
+
+// this function is used to check if the user exists in the database
 const checkForUser = async (username) => {
     try {
         const response = await fetch(`${apiUrl}?username=${username}`)
@@ -17,7 +19,7 @@ const checkForUser = async (username) => {
     }
 }
 
-
+// this function is used to add a new user to the database
 const createUser = async (username) => {
     try {
         const response = await fetch(apiUrl, {
@@ -38,7 +40,8 @@ const createUser = async (username) => {
     }
 }
 
-
+// this function is used to first check if the user exists in the database
+// then it will create a new user if the user does not exist
 export const loginUser = async (username) => {
     const [checkError, user] = await checkForUser(username)
 
@@ -56,7 +59,7 @@ export const loginUser = async (username) => {
 
 }
 
-
+// this function is used to get the user from the database
 export const userById = async (userId) => {
     try {
         const response = await fetch(`${apiUrl}/${userId}`)

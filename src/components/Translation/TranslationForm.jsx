@@ -7,17 +7,21 @@ import {useState} from "react";
 
 const TranslationForm = () => {
 
+    // Hooks
     const { register, handleSubmit, formState: {errors} } = useForm();
     const {user,setUser} = useUser()
 
+    // State
     const [translationSignImages,setTranslationSignImages] = useState([])
+
+    //this is the function that will be called when the form is submitted
 
     const onSubmit = async ({translate}) => {
 
-
+        // add the translation to the database and get the response with a new user
         const [error, updatedUser] = await translateAdd(user,translate)
 
-
+        // if there is an error, return
         if (error !== null) {
             return
         }

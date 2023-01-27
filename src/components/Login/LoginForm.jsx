@@ -8,7 +8,7 @@ import {STORAGE_KEY_USER} from "../../const/storageKeys"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
 
-
+// Config for username validation
 const usernameConfig = {
     required: true,
     minLength: 3
@@ -33,6 +33,7 @@ const LoginForm = () => {
     }, [user, navigate]) //Empty deps - Only run 1ce
 
     //Event Handles
+    // handles the form submit
     const onSubmit = async ({username}) => {
         setLoading(true)
         const [error, userResponse] = await loginUser(username)
@@ -40,6 +41,8 @@ const LoginForm = () => {
             setApiError(error)
         }
 
+        // set the user in the context
+        // and in the local storage
         if (userResponse !== null) {
             storageSave(STORAGE_KEY_USER, userResponse)
             setUser(userResponse)
@@ -49,6 +52,7 @@ const LoginForm = () => {
 
 
     //Render Functions
+    // creates a error message for the username input
     const errorMessage = (() => {
         if (!errors.username) {
             return null
