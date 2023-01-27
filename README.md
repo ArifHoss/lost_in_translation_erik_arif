@@ -11,6 +11,7 @@ This is an online sign language translator built as a Single Page Application us
 #### •	Browser Developer Tools for testing and debugging (React and Redux Dev Tools)
 #### •	Git
 #### •	Rest API: https://github.com/dewald-els/noroff-assignment-api
+#### •  Component diagram you find in under component diagram folder.
 
 ## Features
 #### •	Login page for users to enter their name
