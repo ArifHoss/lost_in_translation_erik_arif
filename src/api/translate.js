@@ -2,6 +2,8 @@ import {createHeaders} from "./index"
 
 const apiUrl = process.env.REACT_APP_API_URL
 
+
+// this function is used to add a new translation to the database
 export const translateAdd = async (user,translate) => {
 
     try {
@@ -25,6 +27,7 @@ export const translateAdd = async (user,translate) => {
 }
 
 
+//this function is used to delete the translations from the database
 export const translateClearHistory = async (userId) => {
 
     try {

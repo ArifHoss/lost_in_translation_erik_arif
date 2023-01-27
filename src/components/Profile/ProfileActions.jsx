@@ -9,12 +9,19 @@ const ProfileActions = () => {
     const {user, setUser} = useUser()
 
 
+    // this is triggered when the user clicks the logout button
+    // it clears the user from the context and the local storage
+    // and redirects the user to the login page (by making use of the withAuth HOC)
     const handleLogoutClick = () => {
         if (window.confirm('Are you sure you want to logout?')) {
             storageDelete(STORAGE_KEY_USER, null)
             setUser(null)
         }
     }
+
+    // this is triggered when the user clicks the clear history button
+    // it clears the user's translation history
+    //it also updates the user in the context and the local storage
     const handleClearHistoryClick = async () => {
         if (!window.confirm('Are you sure you want to clear your history?\nThis action cannot be undone.')) {
             return

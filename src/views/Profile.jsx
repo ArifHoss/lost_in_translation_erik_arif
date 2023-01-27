@@ -15,17 +15,17 @@ const Profile = () => {
     const {user,setUser} = useUser()
 
 
-useEffect(() => {
-
-    const findUser = async () => {
-        const [error,latestUser] = await userById(user.id)
-        if(error === null){
-            storageSave(STORAGE_KEY_USER, latestUser )
-            setUser(latestUser)
-        }
-    }
-    // findUser()
-},[setUser,user.id])
+// useEffect(() => {
+//
+//     const findUser = async () => {
+//         const [error,latestUser] = await userById(user.id)
+//         if(error === null){
+//             storageSave(STORAGE_KEY_USER, latestUser )
+//             setUser(latestUser)
+//         }
+//     }
+//     // findUser()
+// },[setUser,user.id])
 
     return (
         <>

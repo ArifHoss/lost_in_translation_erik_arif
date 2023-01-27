@@ -7,17 +7,21 @@ import {useState} from "react";
 
 const TranslationForm = () => {
 
-    const {register, handleSubmit, formState: {errors}} = useForm();
-    const {user, setUser} = useUser()
+    // Hooks
+    const { register, handleSubmit, formState: {errors} } = useForm();
+    const {user,setUser} = useUser()
 
-    const [translationSignImages, setTranslationSignImages] = useState([])
+    // State
+    const [translationSignImages,setTranslationSignImages] = useState([])
+
+    //this is the function that will be called when the form is submitted
 
     const onSubmit = async ({translate}) => {
 
+        // add the translation to the database and get the response with a new user
+        const [error, updatedUser] = await translateAdd(user,translate)
 
-        const [error, updatedUser] = await translateAdd(user, translate)
-
-
+        // if there is an error, return
         if (error !== null) {
             return
         }
@@ -42,7 +46,7 @@ const TranslationForm = () => {
         //     return <img src={`/img/signs/${char}.png`} alt={char}/>
 
         const images = chars.filter(char => /^[a-zA-Z]$/.test(char)).map(char => {
-            return <img src={`/img/signs/${char}.png`} alt={char} width="50"/>
+            return  <img src= {`/img/signs/${char}.png`} alt={char} width="50"/>
         })
 
         // console.log(images)
@@ -52,24 +56,22 @@ const TranslationForm = () => {
     }
 
     return (
-        <div className='translations_form_box_container'>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <fieldset>
-                    <label htmlFor="translate">Translate: </label>
-                    <input
-                        type="text"
-                        placeholder="translate this!"
-                        {...register("translate", {required: true})} />
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <fieldset>
+                <label htmlFor="translate">Translate: </label>
+                <input
+                    type="text"
+                    placeholder="translate this!"
+                    {...register("translate", {required: true})} />
 
-                </fieldset>
-                <button type="submit">
-                    Translate
-                </button>
-            </form>
+            </fieldset>
+            <button type="submit">
+                Translate
+            </button>
             <div className='translations_box'>
                 {translationSignImages}
             </div>
-        </div>
+        </form>
     )
 }
 
